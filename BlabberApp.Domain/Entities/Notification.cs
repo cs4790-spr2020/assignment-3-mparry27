@@ -1,20 +1,10 @@
-using BlabberApp.Domain.Interfaces;
+using System;
 
 namespace BlabberApp.Domain.Entities
 {
-    public class Notification : BaseDatum
+    public class Notification : BaseEntity
     {
-        private string _blab;
-        public string Blab
-        {
-            get { return this._blab; }
-            set { this._blab = value; }
-        }
-        private string _userId;
-        public string UserID
-        {
-            get { return this._userId; }
-            set { this._userId = value; }
-        }
+        public String Link { get; set; }
+        public String Message { get; set; }
     }
 }

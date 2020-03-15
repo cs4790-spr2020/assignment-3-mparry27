@@ -7,42 +7,29 @@ namespace BlabberApp.DomainTest.Entities
     public class NotificationTest
     {
         [TestMethod]
-        public void TestSetGetBlab()
+        public void TestSetGetMessage()
         {
             // Arrange
             Notification harness = new Notification(); 
-            Blab expected = new Blab(); 
-            harness.Blab = new Blab();
+            string expected = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."; 
+            harness.Message = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
             // Act
-            Blab actual = harness.Blab;
+            string actual = harness.Message;
             // Assert
             Assert.AreEqual(actual, expected);
         }
 
         [TestMethod]
-        public void TestSetGetUserID()
+        public void TestSetGetLink()
         {
             // Arrange
-            Blab harness = new Blab(); 
-            string expected = "foobar@example.com";
-            harness.UserID = "foobar@example.com";
+            Notification harness = new Notification(); 
+            string expected = "https://www.linktoblab.com/testblab";
+            harness.Link = "https://www.linktoblab.com/testblab";
             // Act
-            string actual = harness.UserID;
+            string actual = harness.Link;
             // Assert
-            Assert.AreEqual(actual, expected);
-        }
-
-        [TestMethod]
-        public void TestGetSysId()
-        {
-            // Arrange
-            Blab harness = new Blab();
-            string expected = harness.getSysId();
-            // Act
-            string actual = harness.getSysId();
-            // Assert
-            Assert.AreEqual(actual, expected);
-            Assert.AreEqual(true, harness.getSysId() is string);
+            Assert.AreEqual(actual.ToString(), expected.ToString());
         }
     }
 }

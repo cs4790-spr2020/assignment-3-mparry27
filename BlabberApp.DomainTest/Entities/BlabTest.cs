@@ -29,7 +29,7 @@ namespace BlabberApp.DomainTest.Entities
             // Act
             string actual = harness.UserID;
             // Assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(actual.ToString(), expected.ToString());
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace BlabberApp.DomainTest.Entities
             // Act
             string actual = harness.getSysId();
             // Assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(actual.ToString(), expected.ToString());
             Assert.AreEqual(true, harness.getSysId() is string);
         }
     }
